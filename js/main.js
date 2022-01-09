@@ -113,3 +113,56 @@ function we() {
 }
 setInterval(we, 1000)
 */
+
+
+
+
+let butInstall = document.querySelector('.install');
+
+window.addEventListener('beforeinstallprompt', (event) => {
+  //console.log('👍', 'beforeinstallprompt', event);
+/*
+  storedData = JSON.parse(localStorage.getItem('MathRiddlesApp'));
+  const data = navigator.userAgent;
+  const replaceBrand = data.replace('SM', 'Samsung')
+  let deviceBrand = replaceBrand.match('Samsung');
+  deviceBrand = deviceBrand[0];
+
+  if (storedData.visited == 0 && deviceBrand == 'Samsung') {
+    alert('Download Same App from Samsung App Store')
+    window.location.href = 'https://apps.samsung.com/appquery/appDetail.as?appId=app.netlify.mathriddles.twa';
+  }
+  else {*/
+    // Stash the event so it can be triggered later.
+    window.deferredPrompt = event;
+    // Remove the 'hidden' class from the install button container
+    //divInstall.classList.toggle('hidden', false);
+  //}
+});
+
+butInstall.addEventListener('click', () => {
+  //console.log('👍', 'butInstall-clicked');
+
+  const promptEvent = window.deferredPrompt;
+  if (!promptEvent) {
+    // The deferred prompt isn't available.
+    return;
+  }
+  // Show the install prompt.
+  promptEvent.prompt();
+  // Log the result
+  const result = promptEvent.userChoice;
+  //console.log('👍', 'userChoice', result);
+  // Reset the deferred prompt variable, since
+  // prompt() can only be called once.
+  window.deferredPrompt = null;
+  // Hide the install button.
+  //divInstall.classList.toggle('hidden', true);
+  //}
+});
+
+window.addEventListener('appinstalled', (event) => {
+  //console.log('👍', 'appinstalled', event);
+  // Clear the deferredPrompt so it can be garbage collected
+  window.deferredPrompt = null;
+});
