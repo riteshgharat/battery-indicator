@@ -1,0 +1,32 @@
+{
+  "name": "Battery Alert",
+  "short_name": "Battery Alert",
+  "description": "PWA to get Battery Alert!",
+  "start_url": "./index.html?utm=homescreen",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#fff",
+  "theme_color": "#55FB28",
+  "icons": [
+    {
+      "src": "icons/android-launchericon-512-512.png",
+      "sizes": "512x512"
+    },
+    {
+      "src": "icons/android-launchericon-192-192.png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "icons/android-launchericon-144-144.png",
+      "sizes": "144x144"
+    },
+    {
+      "src": "icons/android-launchericon-96-96.png",
+      "sizes": "96x96"
+    },
+    {
+      "src": "icons/android-launchericon-72-72.png",
+      "sizes": "72x72"
+      }
+    ]
+}
