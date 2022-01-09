@@ -6,7 +6,7 @@
   "display": "standalone",
   "orientation": "portrait",
   "background_color": "#fff",
-  "theme_color": "#55FB28",
+  "theme_color": "#70FF6F",
   "icons": [
     {
       "src": "icons/android-launchericon-512-512.png",
